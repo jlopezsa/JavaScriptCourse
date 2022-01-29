@@ -1,0 +1,2 @@
+Primera línea en un archivo txt
+Nueva línea de texto adicionada al final
