@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 
+// Showing statics files such as figures, css files ...
+app.use(express.static("public"));
+
+
+
 // (property) Application<Record<string, any>>.get: ((name: string) => any) & IRouterMatcher<Express, any>
 app.get("/",(req,res)=>{
     const name = req.query.name;
@@ -8,6 +13,8 @@ app.get("/",(req,res)=>{
 
     res.send(`<h1>Hello ${name}, you are ${age} years old</h1>`);
 });
+
+
 
 app.get("/users/:name",(req,res)=>{
     const name = req.params.name;
