@@ -36,3 +36,13 @@ app.get("/users/:name",(req,res)=>{
 ```
 <img src="./figures/req_example_defined_values_routes.png" width="250"/>
 <img src="./figures/req_example_defined_values_routes_2.png" width="250"/>
+
+
+# Showing statics files
+
+```JavaScript
+app.use(express.static("public"));
+```
+
+<img src="./figures/new_folder_require.png" width="250"/>
+<img src="./figures/browser_static_file_figure.png" width="250"/>
