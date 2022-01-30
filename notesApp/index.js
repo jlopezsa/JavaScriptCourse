@@ -3,8 +3,16 @@ const app = express();
 
 // (property) Application<Record<string, any>>.get: ((name: string) => any) & IRouterMatcher<Express, any>
 app.get("/",(req,res)=>{
-    res.send("<h1>Hola Julian Jair Salamanca</h1>")
+    const name = req.query.name;
+    const age = req.query.age;
+
+    res.send(`<h1>Hello ${name}, you are ${age} years old</h1>`);
 });
+
+app.get("/users/:name",(req,res)=>{
+    const name = req.params.name;
+    res.send(`<h1>Hola ${name}</h1>`)
+})
 
 // Creating routes (Routing in Express): the routs 
 app.post("/users",(req,res)=>{
