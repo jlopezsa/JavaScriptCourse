@@ -12,4 +12,5 @@ The program will be wait the requests through the 5500 port.
 Therefore, in a browser is required enter to localhost 5500 through the sentence: http://localhost:#### (#### is the number port)
 
 The following figure will be show.
+
 <img src="figure_local_host.png" width="250"/>
