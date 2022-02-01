@@ -2,7 +2,7 @@
 # Notes-application with JavaScript
 
 This project is developed following the tutorial of [Make it Real](https://www.youtube.com/watch?v=RedMWe6J0sg&list=PLxyfMWnjW2kt1i7oMIi7VQ30VOX5bDiV1&index=1) (*Curso de Node.js con Express y MongoDB)*.
-The aim of the project is develop a web application to take notes.
+The aim of the project is develop a web application to take notes. Also, it will be shown the libraries required for that.
 
 Through the project the following topics will be shown:
 
