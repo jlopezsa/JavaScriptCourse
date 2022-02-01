@@ -20,6 +20,8 @@ Through the project the following topics will be shown:
   * Install a view engine such as [pug](https://pugjs.org/api/getting-started.html), [mustache](http://mustache.github.io/) or [EJS](https://ejs.co/)
   * In this project will be used the [pug](https://pugjs.org/api/getting-started.html) view engine.
     * Installing pug library: <code>npm install --save pug</code>
+  * Get route parameters ussing pug view engine
+  
 
 # Adding a request 
 
@@ -82,4 +84,32 @@ app.get("/",(req,res)=>{
 The index.js file is executed with the nodemon <code>nodemon index.js</code>
 
 Localhost:3000 is request in the browser:
+
 <img src="./figures/hollo_world_in_pug.png" width="400"/>
+
+## Route parameters through pug view engine
+
+Code in the index.js
+```JavaScript
+app.get("/",(req,res)=>{
+    const name = req.query.name;
+    const age = req.query.age;
+    //res.send(`<h1>Hello ${name}, you are ${age} years old</h1>`);
+    res.render("index", {name, age});   // render method to call the index file
+                                        // {name,age}: Arguments to receive the values name and age
+});
+```
+
+Code in the /views/index.pug
+
+```JavaScript
+html
+    head
+        title My notes
+    body
+        h1 Hi #{name}, you are #{age} years old
+```
+
+<img src="./figures/route_parameters_undefined_pug_view_engine.png" width="400"/>
+
+<img src="./figures/route_parameters_defined_pug_view_engine.png" width="400"/>

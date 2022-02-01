@@ -15,7 +15,8 @@ app.get("/",(req,res)=>{
     const name = req.query.name;
     const age = req.query.age;
     //res.send(`<h1>Hello ${name}, you are ${age} years old</h1>`);
-    res.render("index"); // render method to call the index file
+    res.render("index", {name, age});   // render method to call the index file
+                                        // {name,age}: Arguments to receive the values name and age
 });
 
 
