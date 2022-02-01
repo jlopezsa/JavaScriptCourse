@@ -1,17 +1,21 @@
 const express = require("express");
 const app = express();
 
+// Add to use a view engine
+app.set("view engine", "pug");
+// All pug files will be added in the "views" folder
+app.set("views","views"); // Second parameter is the folder name where will be the views files 
+
 // Showing statics files such as figures, css files ...
 app.use(express.static("public"));
-
 
 
 // (property) Application<Record<string, any>>.get: ((name: string) => any) & IRouterMatcher<Express, any>
 app.get("/",(req,res)=>{
     const name = req.query.name;
     const age = req.query.age;
-
-    res.send(`<h1>Hello ${name}, you are ${age} years old</h1>`);
+    //res.send(`<h1>Hello ${name}, you are ${age} years old</h1>`);
+    res.render("index"); // render method to call the index file
 });
 
 
