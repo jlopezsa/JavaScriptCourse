@@ -12,7 +12,7 @@ Through the project the following topics will be shown:
 * **Nodemon** library, it is used to haven't got to restart the server manually. This library is installed through the sentence: <code>npm install -g nodemon</code>
   * Index.js has got to run with the sentence <code>nodemon index.js</code>
     * The following issue was presented: "la ejecución de scripts está deshabilitada en este sistema".
-    * The command <code>Set-ExecutionPolicy RemoteSigned -Force</code> was required execute in powershell.
+    * The command <code>Set-ExecutionPolicy RemoteSigned -Force</code> was required execute in powershell. NOTE: PowerShell will be executed as "Admin"
   * Executed <code>nodemon index.js</code>. Therefor, only is required refresh the browser to update the changes made into index.js
 * Creating routes to get parameters using the methods: <code>express().get()</code>
 * Showing statics files such as figures using the sentence <code>app.use(express.static("public"))</code>;
