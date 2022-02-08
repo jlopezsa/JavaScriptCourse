@@ -56,3 +56,30 @@ for (const key in new_recipe) {
         console.log("Agrega " + new_recipe[key] + " de " + key);
     }
 }
+
+/**Objetivo: Agregar el método mixIngredients como propiedad al objeto recipe del reto anterior.
+El método mixIngredients debe retornar la cadena del resultado esperado. Imprime en la consola el resultado.
+
+Resultado esperado:
+Mezclando los ingredientes ...
+ */
+
+/*const recipe_func = {
+    "leche en polvo": "1 litro",
+    "chocolate en barra": "3 barras",
+    azúcar: "3 gramos",
+    mixIngredients(){
+        console.log("Mezclando los ingredientes...");
+    }
+}*/
+
+const recipe_func = {
+    "leche en polvo": "1 litro",
+    "chocolate en barra": "3 barras",
+    azúcar: "3 gramos",
+    mixIngredients: function(){
+        console.log("Mezclando los ingredientes...");
+    }
+};
+
+console.log(recipe_func.mixIngredients());
