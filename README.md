@@ -119,3 +119,31 @@ for (const key in new_recipe) {
     }
 }
 ```
+
+Functions as object attributes:
+
+Using clasical method:
+```js
+const recipe_func = {
+    "leche en polvo": "1 litro",
+    "chocolate en barra": "3 barras",
+    azúcar: "3 gramos",
+    mixIngredients: function(){
+        console.log("Mezclando los ingredientes...");
+    }
+};
+console.log(recipe_func.mixIngredients());
+```
+
+Using concise method:
+```js
+const recipe_func = {
+    "leche en polvo": "1 litro",
+    "chocolate en barra": "3 barras",
+    azúcar: "3 gramos",
+    mixIngredients(){
+        console.log("Mezclando los ingredientes...");
+    }
+}
+console.log(recipe_func.mixIngredients());
+```
