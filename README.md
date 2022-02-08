@@ -45,7 +45,7 @@ Changing the first letter of the message words to capital letter. Functions used
 * <code>.split()</code>
 * <code>.push()</code>
 * <code>.replace()</code>
-* <code>.toUpperCase</code>
+* <code>.toUpperCase()</code>
 * <code>.join()</code>
 ```js
 function capitalizar(str){              // Function used to capitalizar a string
@@ -57,5 +57,65 @@ function capitalizar(str){              // Function used to capitalizar a string
                                                                                         // Push function is used to prench an empty vector (vec_upper)
     }
     return vec_upper.join(" ");         // Join function is used to join the words of the vector. The words are joined with a character " "
+}
+```
+## Objects
+
+Declaring an object, getting the properties (<code>Object.keys(object_name)</code>) and printing their values.
+```js
+const recipe = {
+    leche_polvo: "1 litro",
+    chocolate_barra: "3 barras",
+    azucar: "3 gramos"
+}
+
+const llaves = Object.keys(recipe);
+for (const key in llaves) {
+    console.log(`${llaves[key]}: ${recipe[llaves[key]]}`);
+}
+```
+
+Function to replace a specific character in string:
+
+<code>function replaceSpecificCharacter(str,str_char,str2replace)</code>
+
+```js
+const llaves = Object.keys(recipe);
+var llaves_new = new Array();
+llaves_new = [];
+
+for (const key in llaves) {
+    llaves_new.push(replaceSpecificCharacter(llaves[key],'_',' '));
+}
+
+function replaceSpecificCharacter(str,str_char,str2replace){           // <<----- Interesting function ------
+    str = str.replace(str_char,str2replace); 
+    while (str.indexOf(str_char)!==-1) { // loop to replace "_" to " ". Insert space
+        str = str.replace(str_char,str2replace);
+    }
+    // str is a vector without space character
+    return str;
+}
+
+for (const key in llaves) {
+    console.log(`Agrega ${recipe[llaves[key]]} de ${llaves_new[key]}`);
+}
+```
+
+Another form to declare the object attributes name and list the attribute with their values:
+
+<code>object_name.hasOwnProperty(key)</code> where <code>key</code> has the name attributes.
+
+```js
+const new_recipe = {
+    "leche en polvo": "1 litro",
+    "chocolate en barra": "3 barras",
+    azúcar: "3 gramos"
+}
+
+for (const key in new_recipe) {
+    if (new_recipe.hasOwnProperty(key)){
+        console.log("Agrega " + new_recipe[key] + " de " + key);
+    }
 }
 ```
