@@ -18,6 +18,20 @@ Constraints:
 0 <= nums[i] <= 1000
  */
 
+var nums = [2,3,0,1,4];
+
+var counter_steps = 0;
+for(var i=0;i<nums.length;i++){
+    if (nums[i]+counter_steps >= nums.length-1) {
+        i = nums.length;
+        counter_steps = counter_steps + 1;
+        console.log(`Arrive at end | i = ${i}`);        
+    }else{
+        counter_steps = counter_steps + 1;        
+    }
+    //console.log(`Counter steps = ${counter_steps}`);    
+}
+console.log(`Jumps number: ${counter_steps}`);
 
 
 var jump = function(nums) {
