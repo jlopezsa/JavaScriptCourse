@@ -90,4 +90,3 @@ function capitalizar(str){              // Function used to capitalizar a string
     }
     return vec_upper.join(" ");         // Join function is used to join the words of the vector. The words are joined with a character " "
 }
-
