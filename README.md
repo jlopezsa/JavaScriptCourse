@@ -4,8 +4,35 @@
 # Introducition
 Example code to learn some function in JavaScript.
 
-## Strings
-Comparing a character into string
+# Functions
+* Name and anonymous functions (see [007_functions.js]()).
+
+* Some interesting properties to get information of the functions (see file [0071_function_objects_arguments.js]()) are: 
+  * calle
+  * caller
+
+Properties example
+```js
+var op = function(op,v1,v2){
+    console.log(`Value of arguments: ${arguments}`);
+    console.log(arguments);                         // Arguments is an object. Aruments object has all parameters of the function
+    console.log(arguments.callee.name);             // With Callee get the name function     
+    //console.log('caller: '+arguments.callee.caller);
+    if(op=="Square"){
+        return square(v1)
+    }
+}
+```
+Results of command <code>comand.log(.)</code>
+```powershell
+Value of arguments: [object Arguments]
+[Arguments] { '0': 'Square', '1': 2, '2': 4 }
+op
+```
+
+# Strings
+Comparing a character into string (see [009_strings.js]() file).
+
 ```js
 const str = "Los elefantes son enormes";
 function countingEs(str){
@@ -59,7 +86,7 @@ function capitalizar(str){              // Function used to capitalizar a string
     return vec_upper.join(" ");         // Join function is used to join the words of the vector. The words are joined with a character " "
 }
 ```
-## Objects
+# Objects
 
 Declaring an object, getting the properties (<code>Object.keys(object_name)</code>) and printing their values.
 ```js
@@ -120,7 +147,7 @@ for (const key in new_recipe) {
 }
 ```
 
-Functions as object attributes:
+## Functions as object attributes:
 
 Using clasical method:
 ```js
@@ -147,3 +174,4 @@ const recipe_func = {
 }
 console.log(recipe_func.mixIngredients());
 ```
+
