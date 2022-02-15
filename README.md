@@ -5,9 +5,9 @@
 Example code to learn some function in JavaScript.
 
 # Functions
-* Name and anonymous functions (see [007_functions.js]()).
+* Name and anonymous functions (see [007_functions.js](https://github.com/jlopezsa/JavaScriptCourse/blob/main/007_functions.js)).
 
-* Some interesting properties to get information of the functions (see file [0071_function_objects_arguments.js]()) are: 
+* Some interesting properties to get information of the functions (see file [0071_function_objects_arguments.js](https://github.com/jlopezsa/JavaScriptCourse/blob/main/0071_function_objects_arguments.js)) are: 
   * calle
   * caller
 
@@ -31,7 +31,7 @@ op
 ```
 
 # Strings
-Comparing a character into string (see [009_strings.js]() file).
+Comparing a character into string (see [009_strings.js](https://github.com/jlopezsa/JavaScriptCourse/blob/main/009_strings.js) file).
 
 ```js
 const str = "Los elefantes son enormes";
@@ -174,4 +174,8 @@ const recipe_func = {
 }
 console.log(recipe_func.mixIngredients());
 ```
+
+# Class
+
+A javascript class is a template to create objects. 
 
