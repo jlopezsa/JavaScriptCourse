@@ -177,5 +177,16 @@ console.log(recipe_func.mixIngredients());
 
 # Class
 
-A javascript class is a template to create objects. 
+A javascript class is a template to create objects.
+
+The following code implements a class <code>Person</code> with initial properties <code>name, surname and age</code>
+```js
+class Person{
+    constructor(name,surname,age){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+}
+```
 

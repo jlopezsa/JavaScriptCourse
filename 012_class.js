@@ -1,29 +1,19 @@
+/** JavaScript fundamentals, console input
+ * File create date: 14/02/2022
+ * Author: Julián López
+ * Aim: Learn Class concepts 
+ * References: 
+ */
+
+
 class Person{
-    //#age
-    constructor(name,surname){
+    constructor(name,surname,age){
         this.name = name;
         this.surname = surname;
-        this.#age = age;
-        //this.profession = profession;
+        this.age = age;
     }
-
-    get age(){
-        return this._age;
-    }
-    set age(n){
-        this._age = n;
-    }
-    /*
-    get profession(){
-        return this._profession;
-    }
-    set profession(pro){
-        this._profession = pro;
-    }*/
 }
 
-const student = new Person(`Carlos`,`Lopez`);
-student.age = 38;
-student.profession = "Engineer";
+const student = new Person(`Carlos`,`Lopez`,38);
 
-console.log(`Hello ${student.name} ${student.surname}, you are an ${student.profession}, you are ${student.age} years old`);
+console.log(`Hello ${student.name} ${student.surname}, you are ${student.age} years old`);
