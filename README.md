@@ -227,3 +227,26 @@ const student = new Person(`Carlos`,`Lopez`,38);
 console.log(`Hello ${student.name} ${student.surname}, you are ${student.age} years old`);
 console.log(`You birth date is ${student.birthDate()}`)
 ```
+
+## Strict-mode use
+The directive "use strict", place at beginning of js file, was porpoised by [ECMAScript5](https://262.ecma-international.org/12.0/#sec-strict-mode-code). This directive is used to, obligatorily, declare all variables used in the code.
+
+For instance, in the followingg code:
+
+```js
+'use strict';
+v = "¡Hola! ¡Strict mode in JavaScript!";
+console.log(v)
+```
+the result is the error 
+```
+ReferenceError: v is not defined
+```
+
+to correct this, the variable <code>v</code> has got declare as 
+```js
+'use strict';
+var v = "¡Hola! ¡Strict mode in JavaScript!";
+console.log(v)
+```
+
