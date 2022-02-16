@@ -5,9 +5,9 @@
 Example code to learn some function in JavaScript.
 
 # Functions
-* Name and anonymous functions (see [007_functions.js]()).
+* Name and anonymous functions (see [007_functions.js](https://github.com/jlopezsa/JavaScriptCourse/blob/main/007_functions.js)).
 
-* Some interesting properties to get information of the functions (see file [0071_function_objects_arguments.js]()) are: 
+* Some interesting properties to get information of the functions (see file [0071_function_objects_arguments.js](https://github.com/jlopezsa/JavaScriptCourse/blob/main/0071_function_objects_arguments.js)) are: 
   * calle
   * caller
 
@@ -31,7 +31,7 @@ op
 ```
 
 # Strings
-Comparing a character into string (see [009_strings.js]() file).
+Comparing a character into string (see [009_strings.js](https://github.com/jlopezsa/JavaScriptCourse/blob/main/009_strings.js) file).
 
 ```js
 const str = "Los elefantes son enormes";
@@ -175,3 +175,55 @@ const recipe_func = {
 console.log(recipe_func.mixIngredients());
 ```
 
+# Class
+
+A javascript class is a template to create objects.
+
+The following code implements a class <code>Person</code> with initial properties <code>name, surname, and age</code>. All classes always add the <code>constructor()</code> method. This method is used to initialize the object parameters.
+If the constructor isn't defined, JS creates a default constructor with empty properties.
+```js
+class Person{
+    constructor(name,surname,age){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+}
+```
+
+The Person class is instantiated through:
+```js
+const student = new Person(`Carlos`,`Lopez`,38);
+```
+and the properties are accessed through
+
+```js
+console.log(`Hello ${student.name} ${student.surname}, you are ${student.age} years old`);
+```
+and message result is:
+```bash
+Hello Carlos Lopez, you are 38 years old
+```
+
+## Methods() 
+
+Person class with a method().
+
+```js
+class Person{
+    constructor(name,surname,age){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+    birthDate(){
+        const date = new Date();    // Date{} is a JS class
+        const this_moment = date.getFullYear();
+        return this_moment - this.age;
+    }
+}
+const student = new Person(`Carlos`,`Lopez`,38);
+
+console.log(`Hello ${student.name} ${student.surname}, you are ${student.age} years old`);
+console.log(`You birth date is ${student.birthDate()}`)
+```
