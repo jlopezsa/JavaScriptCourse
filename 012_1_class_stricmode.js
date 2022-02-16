@@ -9,7 +9,6 @@
  * https://guias.makeitreal.camp/javascript-ii/scope-hoisting-closures
  */
 
-'use strict';
 
 class Computer{
     constructor(marck,cpu,memory){
@@ -18,8 +17,8 @@ class Computer{
         this.memory = memory;
     }
     printMessage(){
-        //message = this.marck + this.memory + this.cpu;
-        const message = this.marck +' '+ this.memory +' ' + this.cpu;
+        'use strict';
+        var message = this.marck +' '+ this.memory +' ' + this.cpu;
         return message
     }
 }
@@ -29,5 +28,5 @@ const desktop = new Computer("Avell","Intel",'8G');
 console.log(desktop.marck)
 console.log(desktop.printMessage())
 
-const v = "¡Hola! ¡Estoy en modo estricto para script!";
+v = "¡Hola! ¡Strict mode in JavaScript!";
 console.log(v)
