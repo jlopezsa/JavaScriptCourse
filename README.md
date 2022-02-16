@@ -179,7 +179,8 @@ console.log(recipe_func.mixIngredients());
 
 A javascript class is a template to create objects.
 
-The following code implements a class <code>Person</code> with initial properties <code>name, surname and age</code>
+The following code implements a class <code>Person</code> with initial properties <code>name, surname, and age</code>. All classes always add the <code>constructor()</code> method. This method is used to initialize the object parameters.
+If the constructor isn't defined, JS creates a default constructor with empty properties.
 ```js
 class Person{
     constructor(name,surname,age){
@@ -188,5 +189,19 @@ class Person{
         this.age = age;
     }
 }
+```
+
+The Person class is instantiated through:
+```js
+const student = new Person(`Carlos`,`Lopez`,38);
+```
+and the properties are accessed through
+
+```js
+console.log(`Hello ${student.name} ${student.surname}, you are ${student.age} years old`);
+```
+and message result is:
+```bash
+Hello Carlos Lopez, you are 38 years old
 ```
 
