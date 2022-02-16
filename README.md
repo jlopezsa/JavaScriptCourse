@@ -1,7 +1,7 @@
 
 <!--(https://www.youtube.com/watch?v=oxaH9CFpeEE)-->
 
-# Introducition
+# Introduction
 Example code to learn some function in JavaScript.
 
 # Functions
@@ -149,7 +149,7 @@ for (const key in new_recipe) {
 
 ## Functions as object attributes:
 
-Using clasical method:
+Using classical method:
 ```js
 const recipe_func = {
     "leche en polvo": "1 litro",
