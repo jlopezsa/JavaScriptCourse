@@ -205,3 +205,25 @@ and message result is:
 Hello Carlos Lopez, you are 38 years old
 ```
 
+## Methods() 
+
+Person class with a method().
+
+```js
+class Person{
+    constructor(name,surname,age){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+    birthDate(){
+        const date = new Date();    // Date{} is a JS class
+        const this_moment = date.getFullYear();
+        return this_moment - this.age;
+    }
+}
+const student = new Person(`Carlos`,`Lopez`,38);
+
+console.log(`Hello ${student.name} ${student.surname}, you are ${student.age} years old`);
+console.log(`You birth date is ${student.birthDate()}`)
+```
