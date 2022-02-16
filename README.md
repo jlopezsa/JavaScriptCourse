@@ -250,3 +250,20 @@ var v = "¡Hola! ¡Strict mode in JavaScript!";
 console.log(v)
 ```
 
+## Strict-mode into a function()
+If the strict-mode directive is used in a function(), all variables in the function have got to declare. For instance, the following class, in the method <code>printMessage()</code> has the strict-mode directive:
+```js
+class Computer{
+    constructor(marck,cpu,memory){
+        this.marck = marck;
+        this.cpu = cpu;
+        this.memory = memory;
+    }
+    printMessage(){
+        'use strict';
+        var message = this.marck +' '+ this.memory +' ' + this.cpu;
+        return message
+    }
+}
+``` 
+Therefore, the <code>message</code> variable has got to declare as <code>var message</code>, or <code>const message</code> or <code>let message</code>, according to the requirement.
