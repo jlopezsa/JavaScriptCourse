@@ -272,9 +272,31 @@ Therefore, the <code>message</code> variable has got to declare as <code>var mes
 
 # Class Inheritance
 
-The following example shows an example of inheritance:
+The following example shows the inheritance concept. We begin with a representation using the UML class diagram:
+```mermaid
+classDiagram
+    Person <|-- Student : 
+    Person <|-- Professor : 
+    
+    Person : char name
+    Person : char surname
+    Person : int age
+    Person : constructor() void
+    Person : birthDate() void
+
+    Student : char course
+    Student : int begin_year
+    Student : constructor() void
+
+    Professor: char matter
+    Professor: int semester
+    Professor: constructor() void
+```
+
+The latter diagram is represented through the following JavaScript code:
+
 ```js
-class Person{
+ class Person{
     constructor(name,surname,age){
         this.name = name;
         this.surname = surname;
@@ -288,30 +310,28 @@ class Person{
 }
 
 class Student extends Person{
-    constructor(name,surname,age,profission,begin_year){
+    constructor(name,surname,age,course,begin_year){
         super(name,surname,age);
-        this.profission = profission;
+        this.course = course;
         this.begin_year = begin_year;
     }
 }
 
-var stud = new Student('Julian','Lopez',38,'Eng',2019);
+class Professor extends Person{
+    constructor(name, surname, age, matter, semester){
+        super(name,surname,age);
+        this.matter = matter;
+        this.semester = semester;
+    }
+}
+
+var stud = new Student('Julian','Lopez',21,'Telecommunications enginer',2019);
+var prof = new Professor('Jair','Rodriguez',38,'Signals and Sysems',5);
 
 console.log(stud.name);
-console.log(`Your profession is ${stud.profission} and your birth year is ${stud.birthDate()}`);
+console.log(`Your course is ${stud.course} and your birth year is ${stud.birthDate()}`);
+
+console.log(`${'Professor ' + prof.name +' '+ prof.surname}`)
+console.log(`${'Your matter is ' + prof.matter + ' of the ' + prof.semester + 'semester'}`)
 ```
 
-The inheritance ma be represented through the UML class diagram:
-```mermaid
-classDiagram
-    Person <|-- Student : 
-    Person : char name
-    Person : char surname
-    Person : int age
-    Person : constructor()
-    Person : birthDate()
-
-    Student : char profission
-    Student : int begin_year
-    Student : constructor()
-```
