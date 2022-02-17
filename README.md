@@ -266,4 +266,52 @@ class Computer{
     }
 }
 ``` 
+
 Therefore, the <code>message</code> variable has got to declare as <code>var message</code>, or <code>const message</code> or <code>let message</code>, according to the requirement.
+
+
+# Class Inheritance
+
+The following example shows an example of inheritance:
+```js
+class Person{
+    constructor(name,surname,age){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+    birthDate(){
+        const date = new Date();    // Date{} is a JS class
+        const this_moment = date.getFullYear();
+        return this_moment - this.age;
+    }
+}
+
+class Student extends Person{
+    constructor(name,surname,age,profission,begin_year){
+        super(name,surname,age);
+        this.profission = profission;
+        this.begin_year = begin_year;
+    }
+}
+
+var stud = new Student('Julian','Lopez',38,'Eng',2019);
+
+console.log(stud.name);
+console.log(`Your profession is ${stud.profission} and your birth year is ${stud.birthDate()}`);
+```
+
+The inheritance ma be represented through the UML class diagram:
+```mermaid
+classDiagram
+    Person <|-- Student : 
+    Person : char name
+    Person : char surname
+    Person : int age
+    Person : constructor()
+    Person : birthDate()
+
+    Student : char profission
+    Student : int begin_year
+    Student : constructor()
+```
