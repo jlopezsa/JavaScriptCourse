@@ -19,14 +19,26 @@
 }
 
 class Student extends Person{
-    constructor(name,surname,age,profission,begin_year){
+    constructor(name,surname,age,course,begin_year){
         super(name,surname,age);
-        this.profission = profission;
+        this.course = course;
         this.begin_year = begin_year;
     }
 }
 
-var stud = new Student('Julian','Lopez',38,'Eng',2019);
+class Professor extends Person{
+    constructor(name, surname, age, matter, semester){
+        super(name,surname,age);
+        this.matter = matter;
+        this.semester = semester;
+    }
+}
+
+var stud = new Student('Julian','Lopez',21,'Telecommunications enginer',2019);
+var prof = new Professor('Jair','Rodriguez',38,'Signals and Sysems',5);
 
 console.log(stud.name);
-console.log(`Your profession is ${stud.profission} and your birth year is ${stud.birthDate()}`);
+console.log(`Your course is ${stud.course} and your birth year is ${stud.birthDate()}`);
+
+console.log(`${'Professor ' + prof.name +' '+ prof.surname}`)
+console.log(`${'Your matter is ' + prof.matter + ' of the ' + prof.semester + 'semester'}`)
