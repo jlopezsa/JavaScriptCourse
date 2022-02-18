@@ -273,6 +273,7 @@ Therefore, the <code>message</code> variable has got to declare as <code>var mes
 # Class Inheritance
 
 The following example shows the inheritance concept. We begin with a representation using the UML class diagram:
+
 ```mermaid
 classDiagram
     Person <|-- Student : 
@@ -335,3 +336,111 @@ console.log(`${'Professor ' + prof.name +' '+ prof.surname}`)
 console.log(`${'Your matter is ' + prof.matter + ' of the ' + prof.semester + 'semester'}`)
 ```
 
+# Setters and Getter methods
+These methods are used to set or get values of the properties in a class. 
+In the following code, see Person class, the method <code>get name()</code> is used to get the <code>_name</code> parameter value, and the method <code>set name()</code> is used to set a value in the parameter <code>_name</code>. 
+The character <code>\_</code> is usually required to differentiate the parameter with the set/get method.
+
+Another form to use set/get methods is shown in the Student class. The <code>setCourse()</code> and <code>getCourse()</code> methods are used to set and get values in the <code>course</code> parameter, respectively. With these methods aren't required add the <code>\_</code> character front the <code>course</code> parameter.
+
+```js
+/** JavaScript fundamentals, console input
+ * File create date: 17/02/2022
+ * Author: Julián López
+ * Aim: Getters and Setters uses 
+ * References: 
+ * https://www.w3schools.com/js/js_class_inheritance.asp
+ * 
+ */
+
+ class Person{
+    constructor(name,surname,age){
+        this._name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+    get name(){
+        return this._name;  
+    }
+
+    set name(name){
+        this._name = name;
+    }
+
+    birthDate(){
+        const date = new Date();    // Date{} is a JS class
+        const this_moment = date.getFullYear();
+        return this_moment - this.age;
+    }
+}
+
+class Student extends Person{
+    constructor(name,surname,age,course,begin_year){
+        super(name,surname,age);
+        this.course = course;
+        this.begin_year = begin_year;
+    }
+
+    getCourse(){
+        return this.course;
+    }
+
+    setCourse(course){
+        this.course = course;
+    }
+}
+
+class Professor extends Person{
+    constructor(name, surname, age, matter, semester){
+        super(name,surname,age);
+        this.matter = matter;
+        this.semester = semester;
+    }
+}
+
+var stud = new Student('Julian','Lopez',21,'Telecommunications enginer',2019);
+var prof = new Professor('Jair','Rodriguez',38,'Signals and Sysems',5);
+
+
+console.log(`Showing values through get method`);
+console.log(stud.name)  // stud.name is calling the get name(){} method
+
+stud.name = "Emiliano"; // stud.name is calling the set name(){} method with the parameter "Emiliano"
+
+console.log(`New student name is: ${stud.name}`);   // stud.name is calling the get name(){} method
+
+console.log(`Showing values through the object parameter directly`);
+console.log(stud._name);    // stud._name is accessing to the parameter _name. We can acces the _name parameter becaus this is a public
+
+console.log(`${stud.getCourse()}`)
+stud.setCourse("Architecture");
+console.log(`${stud.getCourse()}`)
+```
+
+Latter code may be represented through the following class diagram.
+
+```mermaid
+classDiagram
+    Person <|-- Student : 
+    Person <|-- Professor : 
+    
+    Person : char _name
+    Person : char _surname
+    Person : int _age
+    Person : constructor() void
+    Person : birthDate() void
+    Person : get name()
+    Person : set name(na)
+    Person : get surname()
+    Person : set surname(sur)
+
+    Student : char course
+    Student : int begin_year
+    Student : constructor() void
+    Student : setCourse(char) void
+    Student : getCourse() char 
+
+    Professor: char matter
+    Professor: int semester
+    Professor: constructor() void
+```
